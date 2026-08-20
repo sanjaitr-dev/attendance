@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Pliant:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --color-background: var(--color-background);
+  --color-textb: var(--color-textb);
+  --color-highlight: var(--color-highlight);
+  --color-textw: var(--color-textw);
+  --color-success: var(--color-success);
+  --color-error: var(--color-error);
+  --color-warning: var(--color-warning);
+
+  --font-plaint: "Plaint", sans-serif;
+}
+
+/* Light Mode */
+:root {
+  --color-primary: theme(--color-green-50);
+  --color-accent: oklch(28.2% 0.091 267.935);
+  --color-highlight: oklch(62.3% 0.214 259.815);
+  --color-background: oklch(98.5% 0.002 247.839);
+  --color-textb: oklch(12.9% 0.042 264.695);
+  --color-textw: oklch(98.5% 0.002 247.839);
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #ca882b;
+}
+
+/* Dark Mode */
+:root[data-theme="dark"],
+.dark {
+  --color-primary: oklch(87.1% 0.15 154.449);
+  --color-accent: oklch(35.9% 0.144 278.697);
+  --color-background:oklch(21% 0.034 264.665);
+  --color-textw: oklch(12.9% 0.042 264.695);
+  --color-textb: oklch(98.5% 0.002 247.839);
+  --color-success: #34d399;
+  --color-error: #f87171;
+  --color-warning: #fbbf24;
+}
+
+/* Prefer system dark mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-primary: oklch(44.8% 0.119 151.328);
+    --color-accent: oklch(55.1% 0.027 264.364);
+    --color-background: oklch(21% 0.034 264.665);
+    --color-text: #f9fafb;
+    --color-success: #34d399;
+    --color-error: #f87171;
+    --color-warning: #fbbf24;
+  }
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
